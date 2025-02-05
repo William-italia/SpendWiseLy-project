@@ -6,7 +6,15 @@ const boxTheme = document.getElementById('box-theme');
 
 
 function modeTheme() {
+
     body.classList.toggle('dark');
+
+    if(body.classList.contains('dark')) {
+        boxTheme.innerHTML = ' <i class="fa-solid fa-sun text-[#FFD900]"></i>';
+    } else {
+        boxTheme.innerHTML = ' <img src="./assets/imgs/moon-yellow.svg" alt="box theme">';
+    }
+
 }
 
 function checkListLength() {
@@ -14,7 +22,7 @@ function checkListLength() {
 
     if(itemsList.length > 5) {
         // list.parentElement.classList.add('h-[270px]');
-        list.parentElement.classList.add('h-[320px]');
+        list.parentElement.classList.add('h-[200px]');
     }
 
 }

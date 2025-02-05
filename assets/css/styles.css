@@ -69,8 +69,8 @@ div.overflow-auto::-webkit-scrollbar {
 } 
 
 
-@media (min-width: 376px) and (max-width: 639px) {
+/* @media (min-width: 376px) and (max-width: 639px) {
     #global-container {
         height: 100%;
     }
-}
+} */

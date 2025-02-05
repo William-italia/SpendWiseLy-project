@@ -11,8 +11,10 @@ function modeTheme() {
 
     if(body.classList.contains('dark')) {
         boxTheme.innerHTML = ' <i class="fa-solid fa-sun text-[#FFD900]"></i>';
+        body.style.backgroundColor = '#0D0D0D';
     } else {
         boxTheme.innerHTML = ' <img src="./assets/imgs/moon-yellow.svg" alt="box theme">';
+        body.style.backgroundColor = '#F2F2F2';
     }
 
 }

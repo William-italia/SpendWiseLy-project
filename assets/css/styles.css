@@ -29,9 +29,9 @@ body {
     height: 50px;
 }
 
-#global-container {
+/* #global-container {
     background: #fafafa;
-}
+} */
 
 /* Personaliza a barra de rolagem */
 div.overflow-auto::-webkit-scrollbar {
@@ -40,13 +40,13 @@ div.overflow-auto::-webkit-scrollbar {
 
 /* Estiliza o fundo da barra de rolagem */
 div.overflow-auto::-webkit-scrollbar-track {
-    background: var(--color-light); /* Cor do fundo */
+     /* Cor do fundo */
     border-radius: 10px;
 }
 
 /* Estiliza o "thumb" (a parte que se move da barra de rolagem) */
 div.overflow-auto::-webkit-scrollbar-thumb {
-    background: #DF8DFB; /* Cor do thumb */
+    background: #DF8DFB; 
     border-radius: 10px;
 }
 

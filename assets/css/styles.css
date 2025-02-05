@@ -67,3 +67,10 @@ div.overflow-auto {
 div.overflow-auto::-webkit-scrollbar {
     /* display: none; */
 } 
+
+
+@media (min-width: 376px) and (max-width: 639px) {
+    #global-container {
+        height: 100%;
+    }
+}

@@ -186,8 +186,8 @@ function onAddItemSubmit(e) {
 
         addItemToDOM(item);
         updateLocalStorage();
-        updateValues();
         checkListLength()
+        updateValues();
 
         text.value = '';
         amount.value = '';
@@ -244,8 +244,8 @@ function removeItemLocalStorage(id) {
     transactions = transactions.filter(transaction => transaction.id !== id);
 
     updateLocalStorage();
-    updateValues();
     checkListLength();
+    updateValues();
 
 }
 
@@ -261,6 +261,7 @@ function onClickItem(e) {
 
         updateLocalStorage();
         checkListLength();
+        updateValues();
     }
 }
 
@@ -274,6 +275,7 @@ function displayItems() {
     });
 
     checkListLength();
+    updateValues();
 }
 
 function updateValues() {
@@ -282,18 +284,20 @@ function updateValues() {
 
     const amounts = transactions.map(transaction => Number(transaction.amount));
 
-    if(amounts.length != '') {
-        
-    const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+    if (amounts.length > 0) {
+        // Se houver transações, calcula os totais
+        const total = amounts.reduce((acc, item) => acc + item, 0).toFixed(2);
+        const renda = amounts.filter(item => item > 0).reduce((acc, item) => acc + item, 0).toFixed(2);
+        const gasto = amounts.filter(item => item < 0).reduce((acc, item) => acc + item, 0).toFixed(2);
 
-    const renda = amounts.filter((item) => item > 0).reduce((acc, item) => (acc += item), 0).toFixed(2);
-    const gasto = amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0).toFixed(2);
-    console.log(total, renda);
-    
-    balance.innerHTML = total;
-    income.innerHTML = renda;
-    expense.innerHTML = gasto;
+        balance.innerHTML = total;
+        income.innerHTML = renda;
+        expense.innerHTML = gasto;
         
+    } else {
+        balance.innerHTML = "0.00";
+        income.innerHTML = "0.00";
+        expense.innerHTML = "0.00";
     }
 
 }
@@ -309,7 +313,7 @@ function init() {
     updateValues();
 } 
 
-
+updateValues();
 init();
 
 

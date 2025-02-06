@@ -13,19 +13,39 @@ const expense = document.getElementById('gasto');
 let transactions = getLocalStorage();
 
 
-function modeTheme() {
 
-    body.classList.toggle('dark');
 
-    if(body.classList.contains('dark')) {
-        boxTheme.innerHTML = ' <i class="fa-solid fa-sun text-[#FFD900]"></i>';
+function toggleTheme() {
+
+    const savedTheme = localStorage.getItem('theme');
+
+    if(savedTheme === 'dark') {
+        body.classList.add('dark');
         body.style.backgroundColor = '#0D0D0D';
+
     } else {
-        boxTheme.innerHTML = ' <img src="./assets/imgs/moon-yellow.svg" alt="box theme">';
+        body.classList.remove('dark');
         body.style.backgroundColor = '#F2F2F2';
+
     }
 
 }
+
+function onClickTheme() {
+
+    body.classList.toggle('dark');
+
+    if (body.classList.contains('dark')) {
+        boxTheme.innerHTML = ' <i class="fa-solid fa-sun text-[#FFD900]"></i>';
+        body.style.backgroundColor = '#0D0D0D';
+        localStorage.setItem('theme', 'dark'); 
+    } else {
+        boxTheme.innerHTML = ' <img src="./assets/imgs/moon-yellow.svg" alt="box theme">';
+        body.style.backgroundColor = '#F2F2F2';
+        localStorage.setItem('theme', ''); 
+    }
+}
+
 
 function createLi() {
     const li = document.createElement('li');
@@ -273,14 +293,14 @@ function updateValues() {
 }
 
 function init() {
-    boxTheme.addEventListener('click', modeTheme);
+    boxTheme.addEventListener('click', onClickTheme);
     form.addEventListener('submit', onAddItemSubmit);
     list.addEventListener('click', onClickItem);
     document.addEventListener('DOMContentLoaded', displayItems);
     
+    toggleTheme();
     checkListLength();
     updateValues();
-    
 } 
 
 

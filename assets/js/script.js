@@ -46,6 +46,12 @@ function onClickTheme() {
     }
 }
 
+function validateNumber(input) {
+    // Permite apenas um '-' no início e números
+    input.value = input.value.replace(/(?!^-)[^0-9]/g, '');
+}
+
+
 
 function createLi() {
     const li = document.createElement('li');

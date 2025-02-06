@@ -136,9 +136,9 @@ function checkListLength() {
         history.classList.remove('hidden');
     }
 
-    if(itemsList.length > 4) {
+    if(itemsList.length > 3) {
         // list.parentElement.classList.add('h-[270px]');
-        list.parentElement.classList.add('h-[200px]');
+        list.parentElement.classList.add('h-[150px]');
     }
 
     if(itemsList.length < 1) {

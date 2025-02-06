@@ -14,7 +14,8 @@ SpendWiseLy é um aplicativo simples para controle financeiro, ajudando você a 
 
 🔗 Acesse o site: [SpendWiseLy](https://spendwisel.netlify.app/)
 
-![SpendWiseLy Preview](https://via.placeholder.com/800x400.png?text=SpendWiseLy+Preview)
+<img src="./assets/imgs/tela.jpg" alt="SpendWiseLy Preview" width="300">
+
 
 ## 📌 Tecnologias Utilizadas
 
